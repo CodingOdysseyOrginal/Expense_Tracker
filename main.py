@@ -30,8 +30,19 @@ def filter_expenses():
 
 root = tk.Tk()
 root.title('Expense Tracker')
-root.geometry('400x400')  
 root.configure(bg='#e6f7ff')
+
+# Calculate screen width and height
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+window_width = 500
+window_height = 700
+
+x_position = (screen_width // 2) - (window_width // 2)
+y_position = (screen_height // 2) - (window_height // 2)
+
+root.geometry(f'{window_width}x{window_height}+{x_position}+{y_position}')
 
 style = ttk.Style()
 style.configure('TButton', font=('Arial', 12), background='#99d6ff') 
